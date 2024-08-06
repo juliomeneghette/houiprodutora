@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --red: #E04403;
+    --white: #fff;
+    --dark: #1e1c2a;
+}
+
+/* Botão Contato */
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--red);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+    color: var(--white);
+}
+
+button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #000000;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+body {
+    color: var(--dark);
+    background: var(--white);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigation ul li a {
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.navigation ul li a:hover {
+    color: var(--red);
+}
+
+.navigation i {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu {
+    cursor: pointer;
+    display: none;
+}
+
+.menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: #0C0C0C;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3) {
+    background: #0C0C0C;
+}
+
+.home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.home-text {
+    max-width: 37rem;
+}
+
+.home-text .text-h4 {
+    font-size: 1.5rem;
+    color: #0C0C0C;
+    margin-bottom: 1rem;
+}
+
+.home-text .text-h4 span {
+    color: var(--red);
+}
+
+.home-text .text-h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+    color: #0C0C0C;
+}
+
+.home-text p {
+    margin-bottom: 4rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.home-btn {
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+
+.home-btn:hover {
+    background: #181717;
+}
+
+.home-img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* SOBRE */
+.about{
+    padding: 20px 4%;
+    overflow: hidden;
+}
+
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14;
+}
+
+.about-description h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+.about-description h2 span{
+    color: #E04403;
+}
+
+.about-description p{
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.about-content div{
+    flex: 1;
+}
+.btn-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: none;
+    background-color: #E04403;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 5px;
+}
+/* FIM DO SOBRE */
+/* NOSSO TRABALHO */
+section.portfolio {
+    padding: 80px 4%;
+}
+
+section.portfolio .flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.img-port {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    transition: 0.5s;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.img-port.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+section.portfolio .interface h3 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+section.portfolio h3 span {
+    color: var(--red);
+}
+
+/* NEWSLETTER */
+.newsletter {
+    background-color: var(--red);
+    margin-top: 50px;
+}
+
+.newsletter .box-newsletter {
+    text-align: center;
+    padding: 100px;
+    border-radius: 15px;
+}
+
+.newsletter .box-newsletter h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.newsletter .box-newsletter h2 span {
+    color: #181717;
+}
+
+.newsletter .box-newsletter p {
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.newsletter .box-newsletter p span {
+    color: #181717;
+}
+
+.newsletter .box-newsletter input {
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.newsletter .box-newsletter button {
+    font-size: 15px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 14px;
+    color: var(--white);
+    background-color: #181717;
+    cursor: pointer;
+}
+
+/* FIM NEWSLETTER */
+
+/* Rodapé */
+footer .texto {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries para ajuste em telas menores */
+@media (max-width: 785px) {
+    .navigation {
+        padding: 18px 20px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu.ativo .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        color: #0C0C0C;
+    }
+
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu.ativo .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        color: #0C0C0C;
+    }
+
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+
+    .navigation .btn-contato button {
+        display: none;
+    }
+
+    .btn-contato button {
+        display: block;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .nav-menu.ativo {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    /* Main */
+    .home {
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 2rem;
+    }
+
+    .home .text-h4 {
+        font-size: 1.2rem;
+    }
+
+    .home .text-h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .home p {
+        font-size: 1rem;
+    }
+
+    .home-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /* SOBRE - Ajuste específico para mobile */
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-description {
+        order: 2;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .about-img {
+        order: 1;
+        margin-bottom: 20px;
+        max-width: 80%; /* Centraliza e redimensiona a imagem */
+    }
+
+    .btn-social {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Transformação de imagem no scroll */
+    .img-port {
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .img-port.in-view {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media Queries para responsividade em telas maiores */
+@media (min-width: 768px) {
+    .flex {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-img {
+        order: 0;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-description {
+        text-align: left;
+        max-width: 600px;
+        margin-left: 20px;
+    }
+
+    .about-description p {
+        order: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .about-description h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-description p {
+        font-size: 1.2rem;
+        order: 0;
+    }
+
+    .home-text .text-h1 {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+}
