@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SLICK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FIM SLICK -->
+     <!-- JQUERY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- FIM JQUERY -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -77,17 +85,44 @@
 <!-- NOSSO TRABALHO -->
 <section class="portfolio" id="nosso-trabalho">
 <div class="interface">
+    <div class="flex"></div>
     <h3 class="titulo">NOSSO <span>TRABALHO</span>.</h3>
-<div class="flex">
+<!-- TESTE -->
+    <div class="container responsive"></div>
+    <script>
+       const campos = "media_type,media_url";
+       const limite = 30; <!--POST QUE VAI PUXAR-->
+       const token = "IGQWRNNzlQeEtpM1dZAeE9RaDN4c3NMM25RVVA2WHhIOXVieDF6T2Robkd4ZAEI5S2g2MEZA1UjRldzJqclFzczMxSlZAKQXozMXJ5bzNCUGdSVnI5VFlpZAFFlbFVhNzBkeHFlU1FUMlZAocGh3RXk1enljMUkzUUhEaTgZD";
+       const baseURL = `https://graph.instagram.com/me/media?fields=${campos}&access_token=${token}&limit=${limite}`; 
+   
+   fetch(baseURL)
+   .then(response => response.json())
+   .then((data) => {
+    const container = document.querySelector(".container");
 
-<div class="img-port" style="background-image: url(images\ -\ houi/2.png);" ></div>
-<div class="img-port" style="background-image: url(images\ -\ houi/1.png);"></div>
-<div class="img-port" style="background-image: url(images\ -\ houi/3.png);"></div>
-<div class="img-port" style="background-image: url(images\ -\ houi/4.png);"></div>
-<div class="img-port" style="background-image: url(images\ -\ houi/5.png);"></div>
+    data.data.forEach((img) =>{
+        const mediaType = img.media_type;
+        const mediaUrl = img.media_url;
 
-
-</div><!--FLEX-->
+        if(mediaType === "VIDEO"){
+            const video = document.createElement("video");
+            video.src = mediaUrl;
+            video.classList.add("container-video");
+            container.appenChild(video);
+        }else{
+            const img = document.createElement (img);
+        img.src = mediUrl;
+        img.classList.add("container-img");
+        container.appenChild(img);
+        }
+    });
+   })
+   .catch((error) => console.log(error));
+   </script>
+    <script src="carousel.js"></script>
+   </section>
+   <!-- FIM TESTE -->
+        
 </div> <!--INTERFACE-->
 
 </section> <!--FIM NOSSO TRABALHO-->
@@ -105,8 +140,6 @@
 </div> <!--FIM box-newsletter-->
 
 </div> <!--FIM CONTAINER-->
-
-
 
 </div>
 <!--FIM NEWSLETTER-->
