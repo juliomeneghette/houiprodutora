@@ -87,41 +87,28 @@
 <div class="interface">
     <div class="flex"></div>
     <h3 class="titulo">NOSSO <span>TRABALHO</span>.</h3>
-<!-- TESTE -->
-    <div class="container responsive"></div>
-    <script>
-       const campos = "media_type,media_url";
-       const limite = 30; <!--POST QUE VAI PUXAR-->
-       const token = "IGQWRNNzlQeEtpM1dZAeE9RaDN4c3NMM25RVVA2WHhIOXVieDF6T2Robkd4ZAEI5S2g2MEZA1UjRldzJqclFzczMxSlZAKQXozMXJ5bzNCUGdSVnI5VFlpZAFFlbFVhNzBkeHFlU1FUMlZAocGh3RXk1enljMUkzUUhEaTgZD";
-       const baseURL = `https://graph.instagram.com/me/media?fields=${campos}&access_token=${token}&limit=${limite}`; 
-   
-   fetch(baseURL)
-   .then(response => response.json())
-   .then((data) => {
-    const container = document.querySelector(".container");
-
-    data.data.forEach((img) =>{
-        const mediaType = img.media_type;
-        const mediaUrl = img.media_url;
-
-        if(mediaType === "VIDEO"){
-            const video = document.createElement("video");
-            video.src = mediaUrl;
-            video.classList.add("container-video");
-            container.appenChild(video);
-        }else{
-            const img = document.createElement (img);
-        img.src = mediUrl;
-        img.classList.add("container-img");
-        container.appenChild(img);
-        }
-    });
-   })
-   .catch((error) => console.log(error));
-   </script>
-    <script src="carousel.js"></script>
-   </section>
-   <!-- FIM TESTE -->
+<section class="portfolio" id="nosso-trabalho">
+<div class="interface">
+  
+    <h3 class="titulo">NOSSO <span>TRABALHO</span>.</h3>
+<!--TESTE  -->
+    <div class="img-gallery">
+    <a href="images - houi/1.png" data-lightbox="models" data-title="Família Feliz Tirando Foto">
+        <img src="images - houi/1.png" alt="Família Feliz Tirando Foto.">
+    </a>
+    <a href="images - houi/2.png" data-lightbox="models" data-title="Foto de um projeto luminotécnico">
+        <img src="images - houi/2.png" alt="Foto de um projeto luminotécnico.">
+    </a>
+    <a href="images - houi/3.png" data-lightbox="models" data-title="Foto de um ovo de Páscoa da Mafe Donuts">
+        <img src="images - houi/3.png" alt="Foto de um ovo de Páscoa da Mafe Donuts.">
+    </a>
+    <a href="images - houi/4.png" data-lightbox="models" data-title="Foto de uma cozinha exibindo peças da Mouratta">
+    <img src="images - houi/4.png" alt="Foto de uma cozinha exibindo peças da Mouratta">
+    </a>
+    <a href="images - houi/5.png" data-lightbox="models" data-title="Foto de um calçado">
+    <img src="images - houi/5.png" alt="Foto de um calçado">
+    </a>
+</div> <!--FIM DO TESTE -->
         
 </div> <!--INTERFACE-->
 
